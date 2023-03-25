@@ -1,0 +1,72 @@
+$default_black : #232323;
+$default_blue: #006CFF;
+$default_light_blue : #E8F1FF;
+$default_white : #fff;
+
+$light_gray : #EEE;
+$dark_gray : #999;
+$bg_gray : #f9f9f9;
+
+$box_shadow : 0px 4px 20px rgba(199, 199, 199, 0.35);
+$max_border_radius : 4px;
+
+$min_font_size : 12px;
+$default_font_size : 16px;
+
+$max_width : 1280px;
+
+@mixin max-width {
+  margin: 0 auto;
+  max-width: $max_width;
+  width: 70rem;
+}
+
+@mixin default-border ($color) {
+  border: 1px solid $color;
+}
+
+@mixin default-input {
+  padding: 11px 20px;
+  width: 300px;
+  background-color: $light_gray;
+  @include default-border(transparent);
+  border-radius: $max_border_radius;
+
+  &:focus {
+    outline: none;
+    @include default-border ($default_blue);
+  }
+}
+
+@mixin icon-input {
+  @extend default-input;
+}
+
+@mixin display-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin display-direction($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: $direction;
+}
+
+@mixin absolute-center {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: $default_black;
+}
+
+@mixin modal-sub-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: $dark_gray;
+}

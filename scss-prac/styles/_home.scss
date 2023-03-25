@@ -1,0 +1,38 @@
+@import './common/common';
+
+.Container {}
+
+.searchContainer {
+  width: 100%;
+  @include display-direction(end);
+  @include max-width;
+
+  input {
+    @include default-input;
+  }
+}
+
+.cardList {
+  @include max-width;
+}
+
+.cardContainer {
+  width: 300px;
+  padding: 30px;
+  @include default-border($light_gray);
+  border-radius: $max_border_radius;
+
+  &:hover {
+    box-shadow: $box_shadow;
+    border: none;
+  }
+
+  h1 {
+    @include modal-title;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: $default_font_size;
+  }
+}
